@@ -28,21 +28,16 @@ console.log(myLibrary);
 // Create a table structire on html
 // Use js to add cells on to the table according to the user's input of books
 
-let bookTitle = myLibrary.map(book => book.title);
-console.log(bookTitle)
+function libraryBooksDisplay() {
+    for (let book of myLibrary.map(book => book)) {
+        const div = document.createElement("div");
+        const divText = document.createTextNode(`Book Title: ${book.title}
+        Book Author: ${book.author}, Book Pages: ${book.pages}, Read Status: ${book.read}, Book ID: ${book.id}`);
+        div.appendChild(divText);
+        document.body.appendChild(div);
+    div.style.backgroundColor="Red";
+    div.style.border="1px solid yellow";
+    }
+}
 
-let bookAuthor = myLibrary.map(book => book.author);
-console.log(bookAuthor)
-
-let bookPages = myLibrary.map(book => book.pages);
-console.log(bookPages)
-
-let bookRead = myLibrary.map(book => book.read);
-console.log(bookRead)
-
-let bookId = myLibrary.map(book => book.id);
-console.log(bookId)
-
-const titleCells = document.querySelector("table>tbody>tr>td[headers=title]");
-
-titleCells.textContent = myLibrary.map(book => book.title)[2];
+// The button clicked should add the data to the array
