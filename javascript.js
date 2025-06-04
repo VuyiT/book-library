@@ -29,6 +29,11 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead, bookId) {
 
 console.log(myLibrary);
 
+const button = document.querySelector("button");
+button.addEventListener("click", function(e) {
+    e.preventDefault();
+});
+
 // CREATIVE DIRECTION
 // Separate the diffrent headings of the book like title and author using map method
 // Create a table structire on html
