@@ -65,7 +65,7 @@ function libraryBooksDisplay() {
 
             const cellID = document.createElement("td");
             cellID.setAttribute("headers", "book-id");
-            const cellIDContent = document.createTextNode(crypto.randomUUID());
+            const cellIDContent = document.createTextNode(book.id);
             cellID.appendChild(cellIDContent);
             row.appendChild(cellID);
 
