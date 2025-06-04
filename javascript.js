@@ -12,14 +12,20 @@ function Book(title, author, pages, read, id) {
 }
 
 function addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead, bookId) {
-    const newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead, bookId);
+
+    const title = document.querySelector("#title");
+    const author = document.querySelector("#author");
+    const pages = document.querySelector("#pages");
+    const read = document.querySelector("#read");
+
+    const newBook = new Book(bookTitle = title.value, bookAuthor = author.value, bookPages = pages.value, bookRead = read.value, bookId = crypto.randomUUID());
 
     return myLibrary.push(newBook);
 }
 
-addBookToLibrary("oscar", "Jun Go", "112", "not yet read", crypto.randomUUID())
-addBookToLibrary("oscar", "Jun Go", "112", "not yet read", crypto.randomUUID())
-addBookToLibrary("Billie Book", "Stacy Chan", "98", "read", crypto.randomUUID())
+// addBookToLibrary("oscar", "Jun Go", "112", "not yet read", crypto.randomUUID())
+// addBookToLibrary("oscar", "Jun Go", "112", "not yet read", crypto.randomUUID())
+// addBookToLibrary("Billie Book", "Stacy Chan", "98", "read", crypto.randomUUID())
 
 console.log(myLibrary);
 
