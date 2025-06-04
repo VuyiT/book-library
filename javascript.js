@@ -23,10 +23,6 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead, bookId) {
     return myLibrary.push(newBook);
 }
 
-// addBookToLibrary("oscar", "Jun Go", "112", "not yet read", crypto.randomUUID())
-// addBookToLibrary("oscar", "Jun Go", "112", "not yet read", crypto.randomUUID())
-// addBookToLibrary("Billie Book", "Stacy Chan", "98", "read", crypto.randomUUID())
-
 console.log(myLibrary);
 
 const button = document.querySelector("button");
@@ -34,21 +30,49 @@ button.addEventListener("click", function(e) {
     e.preventDefault();
 });
 
-// CREATIVE DIRECTION
-// Separate the diffrent headings of the book like title and author using map method
-// Create a table structire on html
-// Use js to add cells on to the table according to the user's input of books
 
 function libraryBooksDisplay() {
+    const table = document.querySelector("table");
+    const tbody = document.querySelector("tbody");
+
     for (let book of myLibrary.map(book => book)) {
-        const div = document.createElement("div");
-        const divText = document.createTextNode(`Book Title: ${book.title}
-        Book Author: ${book.author}, Book Pages: ${book.pages}, Read Status: ${book.read}, Book ID: ${book.id}`);
-        div.appendChild(divText);
-        document.body.appendChild(div);
-    div.style.backgroundColor="Red";
-    div.style.border="1px solid yellow";
+        for (let i = 0; i < 1; i++) {
+            const row = document.createElement("tr");
+
+            const cellTitle = document.createElement("td");
+            cellTitle.setAttribute("headers", "book-title");
+            const cellTitleContent = document.createTextNode(book.title);
+            cellTitle.appendChild(cellTitleContent);
+            row.appendChild(cellTitle);
+
+            const cellAuthor = document.createElement("td");
+            cellAuthor.setAttribute("headers", "book=author");
+            const cellAuthorContent = document.createTextNode(book.author);
+            cellAuthor.appendChild(cellAuthorContent);
+            row.appendChild(cellAuthor);
+
+            const cellPages = document.createElement("td");
+            cellPages.setAttribute("headers", "book-pages");
+            const cellPagesContent = document.createTextNode(book.pages);
+            cellPages.appendChild(cellPagesContent);
+            row.appendChild(cellPages);
+
+            const cellRead = document.createElement("td");
+            cellRead.setAttribute("headers", "book-read");
+            const cellReadContent = document.createTextNode(book.read);
+            cellRead.appendChild(cellReadContent);
+            row.appendChild(cellRead);
+
+            const cellID = document.createElement("td");
+            cellID.setAttribute("headers", "book-id");
+            const cellIDContent = document.createTextNode(crypto.randomUUID());
+            cellID.appendChild(cellIDContent);
+            row.appendChild(cellID);
+
+            tbody.appendChild(row);
+
     }
 }
-
-// The button clicked should add the data to the array
+table.appendChild(tbody);
+document.body.appendChild(table);
+}
