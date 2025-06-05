@@ -75,6 +75,13 @@ function libraryBooksDisplay() {
             cellID.appendChild(cellIDContent);
             row.appendChild(cellID);
 
+            const cellDelete = document.createElement("td");
+            cellDelete.setAttribute("headers", "delete-book");
+            const cellDeleteContent = document.createElement("button");
+            cellDeleteContent.textContent = "Delete Book";
+            cellDelete.appendChild(cellDeleteContent);
+            row.appendChild(cellDelete);
+
             tbody.appendChild(row);
     }
     table.appendChild(tbody);
