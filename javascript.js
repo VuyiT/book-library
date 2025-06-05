@@ -25,9 +25,11 @@ function addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead, bookId) {
 
 console.log(myLibrary);
 
-const button = document.querySelector("button");
+const button = document.querySelector(".addBookBtn");
 button.addEventListener("click", function(e) {
     e.preventDefault();
+    addBookToLibrary();
+    libraryBooksDisplay();
 });
 
 
@@ -35,8 +37,12 @@ function libraryBooksDisplay() {
     const table = document.querySelector("table");
     const tbody = document.querySelector("tbody");
 
-    for (let book of myLibrary.map(book => book)) {
-        for (let i = 0; i < 1; i++) {
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+
+    for (let book of myLibrary) {
+        console.log("librayBooksDisplay called!"); //Added to highlight the duplication bug.
             const row = document.createElement("tr");
 
             const cellTitle = document.createElement("td");
@@ -70,9 +76,7 @@ function libraryBooksDisplay() {
             row.appendChild(cellID);
 
             tbody.appendChild(row);
-
     }
-}
-table.appendChild(tbody);
-document.body.appendChild(table);
+    table.appendChild(tbody);
+    document.body.appendChild(table);
 }
