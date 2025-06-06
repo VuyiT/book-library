@@ -79,8 +79,11 @@ function libraryBooksDisplay() {
             cellDelete.setAttribute("headers", "delete-book");
             const cellDeleteContent = document.createElement("button");
             cellDeleteContent.textContent = "Delete Book";
+            cellDelete.classList.toggle("delete-btn");
             cellDelete.appendChild(cellDeleteContent);
             row.appendChild(cellDelete);
+            
+            // I need to add the delete logic and I need to link it to the book id
 
             tbody.appendChild(row);
     }
