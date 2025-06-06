@@ -44,6 +44,7 @@ function libraryBooksDisplay() {
     for (let book of myLibrary) {
         console.log("librayBooksDisplay called!"); //Added to highlight the duplication bug.
             const row = document.createElement("tr");
+            row.dataset.id = book.id;
 
             const cellTitle = document.createElement("td");
             cellTitle.setAttribute("headers", "book-title");
@@ -90,3 +91,12 @@ function libraryBooksDisplay() {
     table.appendChild(tbody);
     document.body.appendChild(table);
 }
+
+// Logic for removing elements in an array
+// What I want is for the delete button to be pressed, 
+// The button belonging to the row to delete the row it is in
+// And to trigger the removal of the specific book in the array.
+
+// So first I need a function that deletes a book from the array, then call that function when clicking the delete button
+
+// And another function that will remove the deleted book from display and will call that function together with the first func on the delete button OR I just need a code or function that return the new array without the deleted books and the delete button can just show the new array when it is clicked.
