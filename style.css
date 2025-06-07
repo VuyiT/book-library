@@ -27,28 +27,35 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Styles */
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: white;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
 }
 
 h1 {
-    color: white;
-    margin: 20px;
+    grid-area: 1 / 1 / 2 / 3;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
+
+legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 form {
-    margin: 50px;
+    margin: 50px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px;
-    width: 80%;
-    background-color: pink;
+    padding: 60px;
+    color: white;
+    background-color: black;
 }
+
 .input-row {
     display: flex;
     flex-direction: column;
@@ -70,16 +77,16 @@ input, select {
 button {
     color: white;
     font-weight: bold;
-    background-color: blue;
+    background-color: purple;
     border: none;
     border-radius: 5px;
     margin-top: 20px;
-    /* width: 10px; */
     padding: 8px 12px;
 }
 
 /* Table Style */
 table {
+    margin-top: 10px;
     border-collapse: collapse;
     border: 2px solid rgb(200,200,200);
     letter-spacing: 1px;
