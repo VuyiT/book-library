@@ -88,6 +88,7 @@ function libraryBooksDisplay() {
             cellButtons.appendChild(toggleButton);
             row.appendChild(cellButtons);
             deleteButton.onclick = deleteBook;
+            toggleButton.onclick = toggleReadStatus;
 
             tbody.appendChild(row);
     }
@@ -104,3 +105,22 @@ function deleteBook() {
     rowToDelete.remove();
 }
 libraryBooksDisplay();
+
+function toggleReadStatus() {
+    const rowToToggle = this.closest("tr");
+    const BookIdToToggle = rowToToggle.dataset.id;
+    const bookToUpdate = myLibrary.find(book => book.id === BookIdToToggle);
+
+    if (bookToUpdate) {
+        if (bookToUpdate.read === "not-yet") {
+        bookToUpdate.read = "in-progress";
+    } else if (bookToUpdate.read === "in-progress") {
+        bookToUpdate.read = "read";
+    } else if (bookToUpdate.read === "read"){
+        bookToUpdate.read = "not-yet";
+    } else {
+        bookToUpdate.read = "not-yet";
+    }
+    }
+    libraryBooksDisplay()
+}
