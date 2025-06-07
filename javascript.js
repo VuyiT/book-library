@@ -79,9 +79,13 @@ function libraryBooksDisplay() {
             const cellButtons = document.createElement("td");
             cellButtons.setAttribute("headers", "delete-book");
             const deleteButton = document.createElement("button");
+            const toggleButton = document.createElement("button");
             deleteButton.textContent = "Delete";
+            toggleButton.textContent = "Read Status";
             deleteButton.classList.toggle = "delete-btn";
+            toggleButton.classList.toggle = "toggle-btn";
             cellButtons.appendChild(deleteButton);
+            cellButtons.appendChild(toggleButton);
             row.appendChild(cellButtons);
             deleteButton.onclick = deleteBook;
 
