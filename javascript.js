@@ -77,7 +77,7 @@ function libraryBooksDisplay() {
             row.appendChild(cellID);
 
             const cellButtons = document.createElement("td");
-            cellButtons.setAttribute("headers", "delete-book");
+            cellButtons.setAttribute("headers", "button-col");
             const deleteButton = document.createElement("button");
             const toggleButton = document.createElement("button");
             deleteButton.textContent = "Delete";
