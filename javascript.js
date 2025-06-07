@@ -76,14 +76,14 @@ function libraryBooksDisplay() {
             cellID.appendChild(cellIDContent);
             row.appendChild(cellID);
 
-            const cellDelete = document.createElement("td");
-            cellDelete.setAttribute("headers", "delete-book");
-            const cellDeleteContent = document.createElement("button");
-            cellDeleteContent.textContent = "Delete Book";
-            cellDeleteContent.classList.toggle("delete-btn");
-            cellDelete.appendChild(cellDeleteContent);
-            row.appendChild(cellDelete);
-            cellDelete.onclick = deleteBook;
+            const cellButtons = document.createElement("td");
+            cellButtons.setAttribute("headers", "delete-book");
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.classList.toggle = "delete-btn";
+            cellButtons.appendChild(deleteButton);
+            row.appendChild(cellButtons);
+            deleteButton.onclick = deleteBook;
 
             tbody.appendChild(row);
     }
